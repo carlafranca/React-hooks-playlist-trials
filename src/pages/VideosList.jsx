@@ -14,17 +14,19 @@ const VideosList = () => {
 
   if (state.videoList.length === 0) return <h1>Is Loading</h1>;
 
+  const renderCard = item => (
+    <li key={item.contentDetails.videoId}>
+      <Card key={item.contentDetails.videoId} item={item} />
+    </li>
+  );
+
   return (
     <>
       <Pagination />
       <ul className="list-unstyled">
         {state.videoList
           .filter(item => item.status.privacyStatus !== "private")
-          .map(item => (
-            <li key={item.contentDetails.videoId}>
-              <Card key={item.contentDetails.videoId} item={item} />
-            </li>
-          ))}
+          .map(renderCard)}
       </ul>
     </>
   );
