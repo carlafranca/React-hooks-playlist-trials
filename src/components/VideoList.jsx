@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import Pagination from "../components/Pagination";
 import FetchData from "../lib/fetchData";
-import VideosCard from "../components/presentational/videos-card/VideosCard";
-import Loading from "../components/Loading";
+import Pagination from "./presentational/Pagination";
+import VideosCard from "./presentational/videos-card/VideosCard";
+import Loading from "./presentational/Loading";
 
 class VideoList extends Component {
   state = {

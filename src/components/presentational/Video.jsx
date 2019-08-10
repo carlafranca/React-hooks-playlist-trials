@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "@reach/router";
-import VideoHeader from "../components/presentational/video-card/VideoHeader";
-import VideoPlayer from "../components/presentational/video-card/VideoPlayer";
-import VideoDesc from "../components/presentational/video-card/VideoDesc";
+import VideoHeader from "./video-card/VideoHeader";
+import VideoPlayer from "./video-card/VideoPlayer";
+import VideoDesc from "./video-card/VideoDesc";
 
 const Video = props => {
   //check for props

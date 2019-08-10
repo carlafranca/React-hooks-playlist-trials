@@ -1,9 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
-import VideoList from "../pages/VideoList";
-import Video from "../pages/Video";
-import Error from "../pages/Error";
-import Title from "./presentational/Title";
+import Video from "../components/presentational/Video";
+import Title from "../components/presentational/Title";
+import VideoList from "../components/VideoList";
+import Error from "../components/Error";
 
 function Application() {
   return (
