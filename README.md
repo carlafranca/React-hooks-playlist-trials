@@ -4,7 +4,7 @@
 
 - route/Application holds the routers
 - components/VideoList is the video list page and the "Container" component
-- components/presentational folder holds all the stateless components except the VideoPalyer.jsx which needs to be isolated
+- components/presentational folder holds all the stateless components
 
 #### Data down. Events up.
 
