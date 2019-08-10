@@ -6,12 +6,13 @@
 - components/VideoList is the video list page and the "Container" component
 - components/presentational folder holds all the stateless components except the VideoPalyer.jsx which needs to be isolated
 
-Data down. Events up.
+#### Data down. Events up.
+
 It explicit shows how the data is flowing throughout the app.
 It's a manual job and it will become harder as the application grows also makes difficult to identify what is affecting you code.
 
-- Steate is stored in a component and passed down as props.
-- I can’t mutate (state is private to the component it belongs, if we need to change it, everything need to go back up as an action/event).
+- State is stored in a component and passed down as props.
+- Props can’t mutate (state is private to the component it belongs, if we need to change it, everything need to go back up as an action/event).
 
 #### Process
 
