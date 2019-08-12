@@ -1,9 +1,9 @@
 import React from "react";
 import { Router } from "@reach/router";
-import Video from "../components/presentational/Video";
-import Title from "../components/presentational/Title";
-import VideoList from "../components/VideoList";
-import Error from "../components/Error";
+import Title from "./components/presentational/Title";
+import { VideosList } from "./HOCs/VideosContainer";
+import Video from "./components/presentational/Video";
+import Error from "./components/Error";
 
 function Application() {
   return (
@@ -11,7 +11,7 @@ function Application() {
       <Title />
       <main>
         <Router>
-          <VideoList path="/" />
+          <VideosList path="/" />
           <Video path="/video" />
           <Error default />
         </Router>

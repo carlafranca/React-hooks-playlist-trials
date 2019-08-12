@@ -16,9 +16,9 @@ const FetchData = async param => {
   );
 
   const data = await fetch(API_URL);
-  const dataJSON = await data.json();
+  // const dataJSON = await data.json();
 
-  return dataJSON;
+  return data;
 };
 
 export default FetchData;
