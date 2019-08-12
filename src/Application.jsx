@@ -1,7 +1,7 @@
 import React from "react";
 import { Router } from "@reach/router";
 import Title from "./components/presentational/Title";
-import { VideosList } from "./HOCs/VideosContainer";
+import Videos from "./components/Videos";
 import Video from "./components/presentational/Video";
 import Error from "./components/Error";
 
@@ -11,7 +11,7 @@ function Application() {
       <Title />
       <main>
         <Router>
-          <VideosList path="/" />
+          <Videos path="/" />
           <Video path="/video" />
           <Error default />
         </Router>
