@@ -5,9 +5,7 @@ import VideoPlayer from "./video-card/VideoPlayer";
 import VideoDesc from "./video-card/VideoDesc";
 
 const Video = props => {
-  //check for props
   if (!props.location.state) return (window.location = "/Error");
-
   const { videoId, title, description, publishedAt } = props.location.state;
 
   return (

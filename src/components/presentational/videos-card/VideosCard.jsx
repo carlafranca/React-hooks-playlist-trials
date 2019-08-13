@@ -3,7 +3,7 @@ import VideosCardImg from "./VideosCardImg";
 import VideosCardDesc from "./VideosCardDesc";
 import { dateFormat } from "../../../lib/library";
 
-const VideosCard = ({ item }) => {
+const VideosCard = ({ item, id }) => {
   const { title, description, publishedAt, thumbnails } = item.snippet;
   const { videoId } = item.contentDetails;
 
@@ -11,6 +11,7 @@ const VideosCard = ({ item }) => {
     <div className="yt-card yt">
       <VideosCardImg title={title} image={thumbnails.default.url} />
       <VideosCardDesc
+        id={id}
         title={title}
         publishedAt={dateFormat(publishedAt)}
         description={description}

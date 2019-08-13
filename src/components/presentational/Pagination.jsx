@@ -1,9 +1,10 @@
 import React from "react";
+import { updateVideos } from "../../flux/actions";
 
-const Pagination = ({ onPaginationClick, prevPageToken, nextPageToken }) => (
+const Pagination = ({ prevPageToken, nextPageToken }) => (
   <nav aria-label="pagination top" className="yt-paging">
     <button
-      onClick={e => onPaginationClick(e, prevPageToken)}
+      onClick={e => updateVideos(prevPageToken)}
       className={
         prevPageToken
           ? "yt-paging__btn yt-btn smooth-effect"
@@ -13,7 +14,7 @@ const Pagination = ({ onPaginationClick, prevPageToken, nextPageToken }) => (
       Prev
     </button>
     <button
-      onClick={e => onPaginationClick(e, nextPageToken)}
+      onClick={e => updateVideos(nextPageToken)}
       className={
         nextPageToken
           ? "yt-paging__btn yt-btn smooth-effect"

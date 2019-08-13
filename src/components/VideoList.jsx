@@ -1,42 +1,34 @@
 import React, { Component } from "react";
-import FetchData from "../lib/fetchData";
+import VideoStore from "../flux/VideoStore";
 import Pagination from "./presentational/Pagination";
 import VideosCard from "./presentational/videos-card/VideosCard";
 import Loading from "./presentational/Loading";
 
 class VideoList extends Component {
-  state = {
-    videos: [],
-    nextPageToken: null,
-    prevPageToken: null,
-    isLoading: true
-  };
+  state = VideoStore.getVideos();
 
-  getData = token => {
-    FetchData(token).then(res => {
-      this.setState({
-        videos: res.items,
-        nextPageToken: res.nextPageToken,
-        prevPageToken: res.prevPageToken,
-        isLoading: false
-      });
-    });
+  updateVideos = () => {
+    const {
+      videos,
+      isLoading,
+      nextPageToken,
+      prevPageToken
+    } = VideoStore.getVideos();
+    this.setState({ videos, isLoading, nextPageToken, prevPageToken });
   };
 
   componentDidMount() {
-    this.getData();
+    VideoStore.on("updated", this.updateVideos);
+  }
+  componentWillUnmount() {
+    VideoStore.off("updated", this.updateVideos);
   }
 
   handleVideoCards = item => (
     <li key={item.id}>
-      <VideosCard key={item.id} item={item} />
+      <VideosCard key={item.id} item={item} id={item.id} />
     </li>
   );
-
-  handlePagination = (e, token) => {
-    this.setState({ isLoading: true });
-    this.getData(token);
-  };
 
   render() {
     const { videos, isLoading, nextPageToken, prevPageToken } = this.state;
@@ -45,7 +37,6 @@ class VideoList extends Component {
     return (
       <>
         <Pagination
-          onPaginationClick={this.handlePagination}
           nextPageToken={nextPageToken}
           prevPageToken={prevPageToken}
         />
