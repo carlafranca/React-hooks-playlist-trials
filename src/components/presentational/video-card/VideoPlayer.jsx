@@ -1,15 +1,10 @@
 import React from "react";
-import { youTube } from "../../../lib/youTube";
+import useYouTube from "../../../hooks/useYouTube";
 
 const VideoPlayer = ({ videoId }) => {
-  //Load the player
-  youTube("player", videoId, "390", "640");
+  const [VideoPlayer] = useYouTube(videoId);
 
-  return (
-    <div className="yt-video__player">
-      <div id="player" />
-    </div>
-  );
+  return <VideoPlayer />;
 };
 
 export default VideoPlayer;

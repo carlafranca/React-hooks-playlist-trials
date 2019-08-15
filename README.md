@@ -1,4 +1,4 @@
-## Playlist - Container pattern
+## Playlist - Hooks pattern
 
 ### Architecture
 
