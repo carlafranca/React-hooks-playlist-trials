@@ -5,7 +5,7 @@ import usePaging from "../hooks/usePaging";
 import VideosCard from "./presentational/videos-card/VideosCard";
 import Loading from "./presentational/Loading";
 
-export default function Videos() {
+const Videos = () => {
   const [token, setToken] = useState(null);
   const [data] = useFetch(token);
   const [PagingNav] = usePaging(
@@ -32,4 +32,6 @@ export default function Videos() {
       </ul>
     </>
   );
-}
+};
+
+export default Videos;

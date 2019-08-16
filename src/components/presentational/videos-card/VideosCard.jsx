@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import VideosCardImg from "./VideosCardImg";
 import VideosCardDesc from "./VideosCardDesc";
 import { dateFormat } from "../../../lib/library";
@@ -20,4 +20,4 @@ const VideosCard = ({ item }) => {
   );
 };
 
-export default VideosCard;
+export default memo(VideosCard);
